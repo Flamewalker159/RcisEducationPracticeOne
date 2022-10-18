@@ -185,6 +185,18 @@
 
 // Задание 2
 
+//  import 'dart:io';  
+
+// void main(){ 
+//   int a = -1; 
+//   List<int> mass =List.filled(100, 0); 
+//   for(int i = 0;i<mass.length; i++){ 
+//     mass[i] = a + 2; 
+//     a+= 2; 
+//   } 
+//   print(mass); 
+// } 
+
 
 
 

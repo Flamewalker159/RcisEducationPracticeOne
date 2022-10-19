@@ -41,10 +41,10 @@
 //     }
 
 //     if(a!=0){
-//     nums.add(a);
-//     sum+=a;
-//     proiz*=a;
-//     arif++;
+//       nums.add(a);
+//       sum+=a;
+//       proiz*=a;
+//       arif++;
 //     }
 //   }
 
@@ -62,15 +62,18 @@
 // void main() {
 //   String a = '0';
 //   List<String> text = [];
+
 //   while (a != '') {
 //     stdout.write('Введите текст: ');
 //     a = stdin.readLineSync()!;
-//   if (a != '') {
-//     text.add(a);
-//   }
+
+//     if (a != '') {
+//       text.add(a);
+//     }
 //   }
 //   int max = 0;
 //   int min = 0;
+
 //   for (int i = 1; i < text.length; ++i) {
 //     if (text[i].length < text[min].length) {
 //       min = i;
@@ -90,20 +93,15 @@
 
 // void main() {
 //   List<int> nums = List.filled(10, 0);
-//   int a = 0;
-//   int b = 0;
+//   int num1 = 0;
+//   int num2 = 0;
+
 //   for (int i = 1; i != 0; i++) {
-//     stdout.write("Введите минимальное число: ");
 //     try {
-//      a = int.parse(stdin.readLineSync()!);
-//     }
-//     catch (formatException) {
-//       print('Error');
-//       continue;
-//     }
-//     stdout.write('Введите максимальное число: ');
-//     try {
-//       b = int.parse(stdin.readLineSync()!);
+//       stdout.write("Введите минимальное число: ");
+//       num1 = int.parse(stdin.readLineSync()!);
+//       stdout.write('Введите максимальное число: ');
+//       num2 = int.parse(stdin.readLineSync()!);
 //     }
 //     catch (formatException) {
 //       print('Error');
@@ -111,15 +109,15 @@
 //     }
 //     i = -1;
 //   }
-//   rand(a, b, nums);
+//   rand(num1, num2, nums);
 //   for (int i = 0; i < nums.length; i++) {
 //     stdout.write('${nums[i]} ');
 //   }
 // }
 
-// List<int> rand(int a, int b, List<int> nums) {
+// List<int> rand(int num1, int num2, List<int> nums) {
 //   for (int x = 0; x < nums.length; x++) {
-//     nums[x] = (Random().nextInt(b - a) + a);
+//     nums[x] = (Random().nextInt(num2 - num1) + num1);
 //   }
 //   return nums;
 // }
@@ -127,21 +125,20 @@
 //Задание 5
 // import 'dart:io';
 
-// void main(){
+// void main() {
 //   stdout.write('Введите строку: ');
 //   String words = stdin.readLineSync()!;
+//   print('Start $words End.');
 //   int a = 1;
-
-//   for(int i = 0;i<words.length; i++){
-//     if(words[i] == ' '){
+//   for (int i = 0; i < words.length; i++) {
+//     if (words[i] == ' ') {
 //       a++;
 //     }
 //   }
-
-//   if(words == ''){
+//   if (words == '') {
 //     a = 0;
 //   }
-//   print(a);
+//   print('Всего слов в строке: $a');
 // }
 
 /*_________________________Практичиеская 1.2__________________________________*/
@@ -161,7 +158,7 @@
 
 // Задание 2
 
-//  import 'dart:io';
+// import 'dart:io';
 
 // void main(){
 //   int a = -1;
@@ -174,28 +171,61 @@
 // }
 
 // Задание 3
-// import 'dart:io'; 
+// import 'dart:io';
+// import 'dart:math';
 
-// void main(){ 
-//   stdout.write('Введите строку: '); 
-//   String words = stdin.readLineSync()!; 
-//   int a = 1; 
-//   for(int i = 0;i<words.length; i++){ 
-//     if(words[i] == ' '){ 
-//       a++; 
-//     } 
-//   } 
-//   if(words == ''){ 
-//     a = 0; 
-//   } 
-//   print(a); 
-// } 
-
-
-
-
+// void main() {
+//   List<List<int>> nums = List.generate(10, (i) => List.filled(10, 0));
+//   for (int i = 0; i < nums.length; i++) {
+//     for (int j = 0; j < nums.length; j++) {
+//       if(j == 0 || i == 0){
+//         nums[i][j] = 1;
+//       }else {
+//         nums[i][j] = nums[i-1][j] + nums[i][j-1];
+//       }
+//       stdout.write("${nums[i][j]}\t");
+//     }
+//     print('');
+//   }
+// }
 
 // Задание 4
+// import 'dart:io';
+// import 'dart:math';
+// import 'dart:web_audio';
 
+// void main() {
+//   List<List<int>> temperature = List.generate(12, (i) => List.filled(30, 0));
+
+//   for (int i = 0; i < temperature.length; i++) {
+//     for (int j = 0; j < temperature.length; j++) {
+//       temperature[i][j] = (Random().nextInt(70) - 30);
+//     }
+//   }
+//   temp(temperature);
+//   int swit = 0;
+//   for (int i = 0; i < temperature.length - 1; i++) {
+//     for (int j = 0; j < temperature.length - i - 1; j++) {
+//       if (temperature[j] > temperature[j + 1]) {
+//         swit = temperature[j];
+//         temperature[j] = temperature[j + 1];
+//         temperature[j + 1] = swit;
+//       }
+//     }
+//   }
+
+// }
+
+// List<int> temp(List<int> nums) {
+//   List<int> srtemp = List.filled(12, 0);
+//   for (int i = 0; i < nums.length; i++) {
+//     for (int j = 0; j < nums.length; j++) {
+//       for (int k = 0; k < srtemp.length; k++) {
+//         srtemp[k] = nums[i][j] / 30;
+//       }
+//     }
+//   }
+//   return srtemp;
+// }
 
 // Задание 5

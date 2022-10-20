@@ -178,7 +178,7 @@
 //   List<List<int>> nums = List.generate(10, (i) => List.filled(10, 0));
 //   for (int i = 0; i < nums.length; i++) {
 //     for (int j = 0; j < nums.length; j++) {
-//       if(j == 0 || i == 0){
+//       if(i == 0 || j == 0){
 //         nums[i][j] = 1;
 //       }else {
 //         nums[i][j] = nums[i-1][j] + nums[i][j-1];
@@ -192,40 +192,96 @@
 // Задание 4
 // import 'dart:io';
 // import 'dart:math';
-// import 'dart:web_audio';
 
 // void main() {
 //   List<List<int>> temperature = List.generate(12, (i) => List.filled(30, 0));
-
 //   for (int i = 0; i < temperature.length; i++) {
 //     for (int j = 0; j < temperature.length; j++) {
 //       temperature[i][j] = (Random().nextInt(70) - 30);
 //     }
 //   }
-//   temp(temperature);
-//   int swit = 0;
-//   for (int i = 0; i < temperature.length - 1; i++) {
-//     for (int j = 0; j < temperature.length - i - 1; j++) {
-//       if (temperature[j] > temperature[j + 1]) {
-//         swit = temperature[j];
-//         temperature[j] = temperature[j + 1];
-//         temperature[j + 1] = swit;
-//       }
-//     }
-//   }
-
+//   List<int> temper = temp(temperature);
+//   print('Средняя температура каждого месяца: $temper');
+//   temper.sort();
+//   print('Отсортировочная средняя температура каждого месяца: $temper');
 // }
 
-// List<int> temp(List<int> nums) {
-//   List<int> srtemp = List.filled(12, 0);
+// List<int> temp(List<List<int>> nums) {
+//   List<int> srtemp = [];
+//   int sr = 0;
+
 //   for (int i = 0; i < nums.length; i++) {
+//     sr = 0;
 //     for (int j = 0; j < nums.length; j++) {
-//       for (int k = 0; k < srtemp.length; k++) {
-//         srtemp[k] = nums[i][j] / 30;
-//       }
+//       sr += nums[i][j];
 //     }
+//     sr = sr ~/ 30;
+//     srtemp.add(sr);
 //   }
 //   return srtemp;
 // }
 
 // Задание 5
+// import 'dart:io';
+// import 'dart:math';
+
+// void main() {
+//   int i = 0;
+//   List<List<int>> temperature = List.generate(12, (a) => List.generate((30), (b) => Random().nextInt(70) - 30));
+//   var map = {
+//     'Январь': temperature[i],
+//     "Февраль": temperature[i + 1],
+//     'Март': temperature[i + 2],
+//     'Апрель': temperature[i + 3],
+//     'Май': temperature[i + 4],
+//     'Июнь': temperature[i + 5],
+//     'Июль': temperature[i + 6],
+//     'Август': temperature[i + 7],
+//     'Сентябрь': temperature[i + 8],
+//     'Октябрь': temperature[i + 9],
+//     'Ноябрь': temperature[i + 10],
+//     'Декабрь': temperature[i + 11]
+//   };
+//   temp(map, temperature);
+// }
+
+// Map temp(map, res) {
+//   var srtemp = {
+//     'Январь': 0,
+//     "Февраль": 0,
+//     'Март': 0,
+//     'Апрель': 0,
+//     'Май': 0,
+//     'Июнь': 0,
+//     'Июль': 0,
+//     'Август': 0,
+//     'Сентябрь': 0,
+//     'Октябрь': 0,
+//     'Ноябрь': 0,
+//     'Декабрь': 0
+//   };
+//   for (var key in map.keys) {
+//     double temp = 0;
+//     for (int i = 0; i < 30; i++) {
+//       temp += map[key]![i];
+//     }
+//     srtemp[key] = (temp ~/ 30);
+//   }
+//   for (var item in srtemp.entries) {
+//     print("${item.key}: ${item.value}");
+//   }
+//   return srtemp;
+// }
+
+/*_________________________Практичиеская 1.3__________________________________*/
+
+// Задание 1
+
+
+// Задание 2
+
+
+
+
+
+// Задание 3

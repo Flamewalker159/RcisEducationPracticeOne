@@ -1,69 +1,72 @@
 /*_________________________Практическая работа 1.1____________________________*/
 
 // Задание 1
-// import 'dart:io';
 // import 'dart:math';
 
 // void main() {
-//   List<int> nums= List.generate(10, (i)=>Random().nextInt(100)+0);
-//   int res=0;
-//   for(int i=1; i < nums.length; i++){
-//     if(nums[i]<nums[res]){
-//       res=i;
+//   List<int> nums = List.generate(10, (i) => Random().nextInt(100) + 0);
+//   int res = 0;
+//   for (int i = 1; i < nums.length; i++) {
+//     if (nums[i] < nums[res]) {
+//       //есть ли в массиве наименьшее число
+//       res = i;
 //     }
 //   }
 //   print(nums);
 //   print(res);
 // }
 
+
+
+
+
 //Задание 2
 // import 'dart:io';
-// import 'dart:math';
 
 // void main() {
-//   List<int> nums=[];
-//   int a=-1;
-//   int sum=0;
-//   int proiz=1;
-//   int arif=0;
+//   List<int> nums = [];
+//   int a = -1;
+//   int sum = 0;
+//   int proiz = 1;
+//   int arif = 0;
 
-//   fynction(a, sum, proiz, arif, nums);
-// }
-
-// void fynction(int a,int sum, int proiz, int arif, List<int> nums){
-//   while(a!=0){
-//     try{
+//   while (a != 0) {
+//     //пока пользователь не введет 0, цикл будет работать
+//     try {
 //       stdout.write('Введите число: ');
-//       a= int.parse(stdin.readLineSync()!);
-//     }catch(formatExceprion){
+//       a = int.parse(stdin.readLineSync()!);
+//     } catch (formatExceprion) {
 //       print('Вы не ввели число!');
 //       continue;
 //     }
 
-//     if(a!=0){
+//     if (a != 0) {
 //       nums.add(a);
-//       sum+=a;
-//       proiz*=a;
+//       sum += a;
+//       proiz *= a;
 //       arif++;
 //     }
 //   }
 
-//   arif= sum ~/ arif;
+//   arif = sum ~/ arif;
 //   print('Массив: $nums');
-//   print('Сумма чисел массива равна - $sum');
-//   print('Произведение чисел равна - $proiz');
-//   print('Среднее арифметическое чисел равна - $arif');
+//   print(
+//       '$sum - сумма \n$proiz - произведение \n$arif - среднее арифметическое');
 // }
+
+
+
+
 
 //Задание 3
 // import 'dart:io';
-// import 'dart:math';
 
 // void main() {
 //   String a = '0';
 //   List<String> text = [];
 
 //   while (a != '') {
+//     //если пользователь ничего не введет, то цикл прекращается
 //     stdout.write('Введите текст: ');
 //     a = stdin.readLineSync()!;
 
@@ -83,9 +86,13 @@
 //     }
 //   }
 //   print(text);
-//   print(max);
-//   print(min);
+//   print('Индекс длинного элемента: $max');
+//   print('Индекс короткого элемента: $min');
 // }
+
+
+
+
 
 //Задание 4
 // import 'dart:io';
@@ -102,12 +109,12 @@
 //       num1 = int.parse(stdin.readLineSync()!);
 //       stdout.write('Введите максимальное число: ');
 //       num2 = int.parse(stdin.readLineSync()!);
-//     }
-//     catch (formatException) {
+//     } catch (a) {
+//       //если пользователь введет текст
 //       print('Error');
 //       continue;
 //     }
-//     i = -1;
+//     i = -1; //чтобы завершился цикл
 //   }
 //   rand(num1, num2, nums);
 //   for (int i = 0; i < nums.length; i++) {
@@ -122,6 +129,10 @@
 //   return nums;
 // }
 
+
+
+
+
 //Задание 5
 // import 'dart:io';
 
@@ -132,156 +143,13 @@
 //   int a = 1;
 //   for (int i = 0; i < words.length; i++) {
 //     if (words[i] == ' ') {
+//       //если в строке есть пробел, то он считае слово
 //       a++;
 //     }
 //   }
 //   if (words == '') {
+//     //если пользователь ничего не ввел
 //     a = 0;
 //   }
 //   print('Всего слов в строке: $a');
 // }
-
-/*_________________________Практичиеская 1.2__________________________________*/
-
-//Задание 1
-// import 'dart:io';
-
-// void main(){
-//   int a = 103;
-//   List<int> mass =List.filled(100, 0);
-//   for(int i = 0;i<mass.length; i++){
-//     mass[i] = a - 3;
-//     a-= 3;
-//   }
-//   print(mass);
-// }
-
-// Задание 2
-
-// import 'dart:io';
-
-// void main(){
-//   int a = -1;
-//   List<int> mass =List.filled(100, 0);
-//   for(int i = 0;i<mass.length; i++){
-//     mass[i] = a + 2;
-//     a+= 2;
-//   }
-//   print(mass);
-// }
-
-// Задание 3
-// import 'dart:io';
-// import 'dart:math';
-
-// void main() {
-//   List<List<int>> nums = List.generate(10, (i) => List.filled(10, 0));
-//   for (int i = 0; i < nums.length; i++) {
-//     for (int j = 0; j < nums.length; j++) {
-//       if(i == 0 || j == 0){
-//         nums[i][j] = 1;
-//       }else {
-//         nums[i][j] = nums[i-1][j] + nums[i][j-1];
-//       }
-//       stdout.write("${nums[i][j]}\t");
-//     }
-//     print('');
-//   }
-// }
-
-// Задание 4
-// import 'dart:io';
-// import 'dart:math';
-
-// void main() {
-//   List<List<int>> temperature = List.generate(12, (i) => List.filled(30, 0));
-//   for (int i = 0; i < temperature.length; i++) {
-//     for (int j = 0; j < temperature.length; j++) {
-//       temperature[i][j] = (Random().nextInt(70) - 30);
-//     }
-//   }
-//   List<int> temper = temp(temperature);
-//   print('Средняя температура каждого месяца: $temper');
-//   temper.sort();
-//   print('Отсортировочная средняя температура каждого месяца: $temper');
-// }
-
-// List<int> temp(List<List<int>> nums) {
-//   List<int> srtemp = [];
-//   int sr = 0;
-
-//   for (int i = 0; i < nums.length; i++) {
-//     sr = 0;
-//     for (int j = 0; j < nums.length; j++) {
-//       sr += nums[i][j];
-//     }
-//     sr = sr ~/ 30;
-//     srtemp.add(sr);
-//   }
-//   return srtemp;
-// }
-
-// Задание 5
-// import 'dart:io';
-// import 'dart:math';
-
-// void main() {
-//   int i = 0;
-//   List<List<int>> temperature = List.generate(12, (a) => List.generate((30), (b) => Random().nextInt(70) - 30));
-//   var map = {
-//     'Январь': temperature[i],
-//     "Февраль": temperature[i + 1],
-//     'Март': temperature[i + 2],
-//     'Апрель': temperature[i + 3],
-//     'Май': temperature[i + 4],
-//     'Июнь': temperature[i + 5],
-//     'Июль': temperature[i + 6],
-//     'Август': temperature[i + 7],
-//     'Сентябрь': temperature[i + 8],
-//     'Октябрь': temperature[i + 9],
-//     'Ноябрь': temperature[i + 10],
-//     'Декабрь': temperature[i + 11]
-//   };
-//   temp(map, temperature);
-// }
-
-// Map temp(map, res) {
-//   var srtemp = {
-//     'Январь': 0,
-//     "Февраль": 0,
-//     'Март': 0,
-//     'Апрель': 0,
-//     'Май': 0,
-//     'Июнь': 0,
-//     'Июль': 0,
-//     'Август': 0,
-//     'Сентябрь': 0,
-//     'Октябрь': 0,
-//     'Ноябрь': 0,
-//     'Декабрь': 0
-//   };
-//   for (var key in map.keys) {
-//     double temp = 0;
-//     for (int i = 0; i < 30; i++) {
-//       temp += map[key]![i];
-//     }
-//     srtemp[key] = (temp ~/ 30);
-//   }
-//   for (var item in srtemp.entries) {
-//     print("${item.key}: ${item.value}");
-//   }
-//   return srtemp;
-// }
-
-/*_________________________Практичиеская 1.3__________________________________*/
-
-// Задание 1
-
-
-// Задание 2
-
-
-
-
-
-// Задание 3
